@@ -6,6 +6,9 @@ const caughtCtrl = require('./controllers/caughtPokemonController.js')
 app.use(express.json())
 
 //Wild pokemon endpoints
+app.get('/api/wild-pokemon', wildCtrl.getThreeRandomPokemon)
+
+//Caught pokemon endpoints
 app.get('/api/pokemon', caughtCtrl.getCaughtPokemon)
 app.post('/api/pokemon', caughtCtrl.catchCaughtPokemon)
 app.put('/api/pokemon/:pokemon_id', caughtCtrl.editCaughtPokemon)
