@@ -8,10 +8,20 @@ class Grass extends Component {
         }
     }
 
-    checkGrass() {}
+    checkGrass() {
+        const {data} = this.props
+        this.props.catchPokemon(data.name, data.sprites.front_default)
+    }
 
     render() {
-        return <div>Grass.js</div>
+        return (
+        <div>
+            <img scr={this.props.data.sprites.front_default} 
+            alt={this.props.data.name}
+            onClick={()=> this.checkGrass()}/>
+            <p>{this.props.data.name}</p>
+            </div>
+        )
     }
 }
 

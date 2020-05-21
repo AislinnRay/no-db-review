@@ -5,14 +5,21 @@ import Pokemon from './Pokemon'
 // export default function() {}
 
 function Pokedex(props){
-    return (
-    <div>
-        Pokedex.js
-        <Pokemon 
+    const pokemonMap = props.caughtPokemon.map((pokemon) => (
+        <Pokemon
+        key={pokemon.id}
         saveName={props.saveName}
         releasePokemon={props.releasePokemon}
+        data={pokemon}
         />
-        </div>
+    ))
+    return (
+    <div>
+        <h2>Pokedex</h2>
+        <div style={{display: 'flex', justifyContent: 'center'}}
+        />
+        {pokemonMap}
+    </div>
     )
 }
 
